@@ -4,6 +4,7 @@
 //
 
 import AVFoundation
+import UIKit
 
 /// Wrapper around AVSpeechSynthesizer that selects the highest-quality
 /// en-US neural voice available on the device. Falls back gracefully if
@@ -13,6 +14,7 @@ final class SpeechSynthesizer {
 
     private let synthesizer = AVSpeechSynthesizer()
     private let voice: AVSpeechSynthesisVoice?
+    private let haptics = UIImpactFeedbackGenerator(style: .rigid)
 
     private init() {
         self.voice = Self.bestAvailableVoice()
@@ -24,6 +26,11 @@ final class SpeechSynthesizer {
     }
 
     func speak(_ text: String) {
+        // Every speak() call is a card tap, so give a gentle tactile bump
+        // alongside the audio. Prepared just before firing for lowest latency.
+        haptics.prepare()
+        haptics.impactOccurred()
+
         // Ensure speech plays through the speaker even when the silent switch is on.
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
         try? AVAudioSession.sharedInstance().setActive(true)
