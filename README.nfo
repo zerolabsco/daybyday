@@ -1,0 +1,25 @@
+┌──────────────────────────────────────────────────────────────┐
+│  D A Y   B Y   D A Y                       [ KRZ ]   krz.sh  │
+└──────────────────────────────────────────────────────────────┘
+
+WHAT
+  ios app for young children. days of the week, months, and seasons
+  as large cards. tap a card to hear it read aloud.
+
+DOES
+  - days, months, and seasons as big colorful cards
+  - tap to hear it, apple on-device text-to-speech
+  - today's day, current month, and current season are highlighted
+  - built for ages 4-5. large tap targets. no reading required
+  - offline. no network, no accounts, no ads
+
+REQUIRES
+  ios 26 or later. for better audio, download an enhanced voice under
+  Settings > Accessibility > Read & Speak > Voices.
+
+LICENSE
+  0bsd. see LICENSE.
+
+┌──────────────────────────────────────────────────────────────┐
+│  krz.sh                                                      │
+└──────────────────────────────────────────────────────────────┘
